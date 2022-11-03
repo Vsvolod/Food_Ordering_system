@@ -20,7 +20,7 @@ public class DrinkController {
     }
 
     @GetMapping("/get_current_drink/{current_drink}")
-    public List<DrinkEntity> getCurrentDrink(@PathVariable(value = "current_drink", required = true) String name){
+    public List<DrinkEntity> getCurrentDrink(@PathVariable(value = "current_drink") String name){
         return drinkRepository.findByName(name);
     }
 

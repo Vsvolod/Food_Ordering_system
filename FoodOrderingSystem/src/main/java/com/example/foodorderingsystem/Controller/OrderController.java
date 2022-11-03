@@ -19,13 +19,13 @@ import java.util.logging.Logger;
 public class OrderController {
     private final OrderRepository orderRepository;
 
-    @GetMapping("/clients_order/{clients_id}")
-    public List<OrderEntity> getAnOrder(@PathVariable(value ="clients_id" ) Long clients_id ){
+    @GetMapping("/clients_order/{client_id}")
+    public List<OrderEntity> getAnOrder(@PathVariable(value ="client_id" ) Long clients_id ){
         return orderRepository.findByClientId(clients_id);
     }
 
     @PostMapping("/new_order")
-    public OrderEntity recordAnOrder(@RequestBody OrderEntity orderEntity) throws FileNotFoundException {
+    public OrderEntity recordAnOrder(@RequestBody OrderEntity orderEntity){
 
             return orderRepository.save(orderEntity);
         }

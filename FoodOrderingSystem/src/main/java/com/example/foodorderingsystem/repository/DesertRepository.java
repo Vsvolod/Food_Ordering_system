@@ -14,7 +14,7 @@ public interface DesertRepository extends JpaRepository<DesertEntity, Long> {
 
     DesertEntity save(DesertEntity entity);
 
-    @Query("select distinct p from DesertEntity p left join fetch p.name where p.name = :name")
+    @Query("select distinct p from DesertEntity p where p.name = :name")
     List<DesertEntity> findByName(@Param("name") String name);
 
 }

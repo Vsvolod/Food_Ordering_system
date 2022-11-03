@@ -105,7 +105,7 @@ public class DesertControllerTest {
 
         Mockito.when(desertRepository.findByName("vafli")).thenReturn(desert);
 
-        mockMvc.perform(MockMvcRequestBuilders.get(String.format("/desert/%s", "vafli"))
+        mockMvc.perform(MockMvcRequestBuilders.get(String.format("/desert/get_current_dessert/%s", "vafli"))
                         .contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())

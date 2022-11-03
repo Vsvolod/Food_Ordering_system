@@ -22,7 +22,7 @@ public class MainDishController {
 
     @GetMapping("dish_by_name/{name}")
     @ResponseBody
-    public List<MainDishEntity> getCurrentDish(@PathVariable(value = "name",required = true) String name){
+    public List<MainDishEntity> getCurrentDish(@PathVariable(value = "name") String name){
         return mainDishRepository.findByName(name);
     }
 

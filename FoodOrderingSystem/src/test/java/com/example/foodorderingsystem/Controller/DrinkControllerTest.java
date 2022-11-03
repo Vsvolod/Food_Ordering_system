@@ -96,12 +96,12 @@ public class DrinkControllerTest {
 
     @Test
     @Order(4)
-    public void getDesertByName() throws Exception {
+    public void getDrinkByName() throws Exception {
         List<DrinkEntity> drinks = new ArrayList<>(Arrays.asList(drinkEntity));
 
         Mockito.when(drinkRepository.findByName("tea")).thenReturn(drinks);
 
-        mockMvc.perform(MockMvcRequestBuilders.get(String.format("/drink/%s", "tea"))
+        mockMvc.perform(MockMvcRequestBuilders.get(String.format("/drink/get_current_drink/%s", "tea"))
                         .contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())

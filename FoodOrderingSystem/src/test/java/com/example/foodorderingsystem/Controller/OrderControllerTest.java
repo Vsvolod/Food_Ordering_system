@@ -101,7 +101,7 @@ public class OrderControllerTest {
 
     @Test
     @Order(3)
-    public void getDishByName() throws Exception {
+    public void getOrderByClientId() throws Exception {
         List<OrderEntity> record = new ArrayList<>(Arrays.asList(order));
 
         Mockito.when(orderRepository.findByClientId(1L)).thenReturn(record);
@@ -117,7 +117,7 @@ public class OrderControllerTest {
 
     @Test
     @Order(4)
-    public void create_record_of_order_success() throws Exception {
+    public void createRecordOfOrderSuccess() throws Exception {
 
         Mockito.when(orderRepository.save(order)).thenReturn(order);
 

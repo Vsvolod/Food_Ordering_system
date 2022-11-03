@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface DrinkRepository extends JpaRepository<DrinkEntity, Long> {
 
-    @Query("select distinct p from DrinkEntity p left join fetch p.name where p.name = :name")
+    @Query("select distinct p from DrinkEntity p where p.name = :name")
     List<DrinkEntity> findByName(@Param("name") String name);
 
     DrinkEntity save(DrinkEntity entity);

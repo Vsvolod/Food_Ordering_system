@@ -22,6 +22,7 @@ public class MainDishEntity {
 
     @ManyToOne
     @JoinColumn(name = "country_id",referencedColumnName = "id")
+    @JsonBackReference
     public CountryEntity country;
 
 

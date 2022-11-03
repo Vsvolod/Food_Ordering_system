@@ -22,7 +22,7 @@ public class DesertController {
     }
 
     @GetMapping("/get_current_dessert/{current_desert}")
-    public List<DesertEntity> getCurrentDessert(@PathVariable(value = "current_desert", required = true) String name){
+    public List<DesertEntity> getCurrentDessert(@PathVariable(value = "current_desert") String name){
         return desertRepository.findByName(name);
     }
 
